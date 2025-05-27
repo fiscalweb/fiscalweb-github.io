@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Fiscal de Mesa 4.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="container" id="home">
+    <h1>Mi Fiscal de Mesa 4.0</h1>
+    <button onclick="openIframe('https://elecciones.castelli.gob.ar/acceso.php?origen=m')">Registro de Votos</button>
+    <button onclick="openIframe('https://elecciones.castelli.gob.ar/mesas.php')">Consulta Estadísticas</button>
+    <button onclick="showForm()">Cierre de Mesa – Informe de votos</button>
+    <a href="https://wa.me/542245477140" target="_blank">
+      <button class="whatsapp">Contactar por WhatsApp</button>
+    </a>
+  </div>
+
+  <div class="iframe-container" id="iframeView">
+    <button onclick="goHome()">Volver al inicio</button>
+    <iframe id="iframeBox" src=""></iframe>
+  </div>
+
+  <div class="form-container" id="voteForm">
+    <h2>Cierre de Mesa – Informe de votos categoría a Concejales</h2>
+    <p id="errorMsg" style="color: red;"></p>
+    <input type="number" id="mesa" placeholder="Número de Mesa" />
+    <input type="number" id="mdf" placeholder="Votos MDF" />
+    <input type="number" id="lla" placeholder="Votos LLA" />
+    <input type="number" id="ucr" placeholder="Votos UCR" />
+    <input type="number" id="vecinal" placeholder="Votos Vecinalismo" />
+    <input type="number" id="pro" placeholder="Votos PRO" />
+    <input type="number" id="blanco" placeholder="Votos en Blanco" />
+    <input type="number" id="nulo" placeholder="Votos Nulos" />
+    <input type="number" id="impugnado" placeholder="Votos Impugnados" />
+    <p><strong>Total de votos:</strong> <span id="total">0</span></p>
+    <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+    <button onclick="copiarMensaje()">Copiar mensaje al portapapeles</button>
+    <button onclick="goHome()">Volver al inicio</button>
+  </div>
+
+  <footer>
+    <p>Elecciones Castelli 2025 – App Oficial del Fiscal de Mesa</p>
+    <p>Desarrollado por SDMsistemas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
